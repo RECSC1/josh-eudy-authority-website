@@ -18,75 +18,79 @@
      --------------------------------------------------------------- */
   var IDS = ['jacksonville','sneadsferry','surfcity','hubert','richlands','swansboro','hollyridge','hampstead','maysville','beulaville','newbern','topsailbeach'];
   var META = {
-    jacksonville:          ['Jacksonville','area-jacksonville.jpg','TBD, confirm with Josh','The core market. Camp Lejeune and MCAS New River drive the calendar, inventory turns on orders rather than on seasons, and the buyer pool refreshes every summer.'],
-    sneadsferry:   ['Sneads Ferry','area-sneadsferry.jpg','TBD, confirm with Josh','Jacksonville’s second downtown. Condos and townhomes for people who want to walk to dinner and skip the yard.'],
-    surfcity:         ['Surf City','area-surfcity.jpg','TBD, confirm with Josh','Schools, greenways and resale strength. The safest place in Onslow County and the Topsail corridor to park equity.'],
-    hubert:         ['Hubert','area-hubert.jpg','TBD','Between Jacksonville and Swansboro. Quiet, and closer to the water than the price suggests.'],
-    richlands: ['Richlands','area-richlands.jpg','TBD','North Onslow. Land, acreage and the widest lots in the county at the lowest price per foot.'],
-    swansboro:   ['Swansboro','area-swansboro.jpg','TBD','Historic downtown with new neighborhoods behind it. The best square footage per dollar north of Jacksonville.'],
-    hollyridge:       ['Holly Ridge','area-hollyridge.jpg','TBD','Ten minutes from the bridge without the beach premium. New neighborhoods going up steadily.'],
-    hampstead:      ['Hampstead','area-hampstead.jpg','TBD','Johnston County pricing with a Jacksonville commute. Pharma jobs on 70 keep the demand honest.'],
-    maysville:  ['Maysville','area-maysville.jpg','TBD','Small town Jones County line. Land, quiet, and the lowest entry price on this map.'],
-    beulaville:       ['Beulaville','area-beulaville.jpg','TBD','Duplin County. Acreage, agriculture and buyers who want distance on purpose.'],
-    newbern:   ['New Bern','area-newbern.jpg','TBD','Fifteen minutes to downtown Jacksonville on 64. New neighborhoods, young families, fast turnover.'],
-    topsailbeach:      ['Topsail Beach','area-topsailbeach.jpg','TBD','The south end of the island. Quieter than Surf City, and almost entirely second homes.']
+    jacksonville: ['Jacksonville','area-jacksonville.jpg','Core market · Onslow County','The core market. Camp Lejeune and MCAS New River drive the calendar, inventory turns on orders rather than on seasons, and the buyer pool refreshes every summer.'],
+    sneadsferry:  ['Sneads Ferry','area-sneadsferry.jpg','Water access · Stone Bay and Courthouse Bay','A working fishing town on the New River, minutes from the Stone Bay and Courthouse Bay areas of Lejeune and the bridge to North Topsail. Waterfront lots, newer neighborhoods and real boat access.'],
+    surfcity:     ['Surf City','area-surfcity.jpg','Topsail Island · Onslow and Pender','The heart of Topsail Island, on both sides of the Onslow and Pender line. Full time residents, second homes and short term rentals, all priced by distance to the sand. Flood zone and insurance come first here.'],
+    hubert:       ['Hubert','area-hubert.jpg','Between Jacksonville and Swansboro','Between Jacksonville and Swansboro off 24 and 172. Quiet, close to the back side of base, and closer to the water than the price suggests.'],
+    richlands:    ['Richlands','area-richlands.jpg','North Onslow · Land and new builds','North Onslow. Small town feel, land and acreage, and a lot of the new construction that has pushed out of Jacksonville.'],
+    swansboro:    ['Swansboro','area-swansboro.jpg','Historic waterfront · White Oak River','Historic waterfront town on the White Oak River, with the Bogue Inlet and Emerald Isle across the bridge. A real downtown, newer neighborhoods inland, and demand that holds.'],
+    hollyridge:   ['Holly Ridge','area-hollyridge.jpg','Near the bridge · New construction','Minutes from the Surf City bridge without the island price. A lot of the newest construction in the county is going up here.'],
+    hampstead:    ['Hampstead','area-hampstead.jpg','Pender County · On 17','Pender County, on 17 between Jacksonville and Wilmington. Soundside neighborhoods, golf communities and households that split a commute between the two.'],
+    maysville:    ['Maysville','area-maysville.jpg','Jones County · Croatan edge','A small Jones County town on 17, at the edge of the Croatan National Forest. Land, quiet, and the lowest entry price on this map.'],
+    beulaville:   ['Beulaville','area-beulaville.jpg','Duplin County · Acreage','Duplin County. Acreage, agriculture and buyers who want distance on purpose.'],
+    newbern:      ['New Bern','area-newbern.jpg','Craven County · Cherry Point side','Craven County, about forty five minutes up 17. A historic downtown where the Neuse and Trent meet, Cherry Point families, and real waterfront at inland prices.'],
+    topsailbeach: ['Topsail Beach','area-topsailbeach.jpg','South end of the island · Pender','The quiet south end of Topsail Island. Mostly second homes and rentals, almost no commercial strip, and a slower pace on purpose.']
   };
-  /* scores are in IDS order */
+  /* scores are in IDS order:
+     jacksonville, sneadsferry, surfcity, hubert, richlands, swansboro,
+     hollyridge, hampstead, maysville, beulaville, newbern, topsailbeach
+     Directional only. Calibrated Oct 2026 for Onslow County and the coast. Review with Josh. */
   var S = {
     budget: {
-      'under400':  [0,.35,.10,.20,.25,.40,.85,.95,.30,.90,.95,1],
-      '400-600':   [.05,.80,.55,.80,.95,.90,1,.90,.95,.95,.90,.80],
-      '600-900':   [.55,.80,1,.90,.80,.85,.50,.45,.60,.40,.40,.35],
-      '900+':      [1,.70,.85,.60,.50,.60,.25,.20,.30,.15,.15,.15]
+      'under250': [.90,.30,.10,.50,.80,.30,.60,.20,1,1,.80,0],
+      '250-400':  [1,.70,.40,.90,.90,.70,.95,.60,.60,.60,.90,.10],
+      '400-650':  [.60,.90,.80,.70,.50,.90,.70,.95,.30,.30,.60,.50],
+      '650+':     [.30,.80,1,.40,.30,.80,.40,.90,.10,.10,.40,1]
     },
     commute: {
-      'downtown':  [1,.90,.50,.35,.25,.45,.30,.35,.35,.85,.80,.50],
-      'rtp':       [.50,.50,1,.85,.80,.35,.50,.25,1,.40,.30,.20],
-      'north':     [.70,1,.50,.35,.25,.95,.20,.20,.45,.35,.50,.40],
-      'east':      [.50,.45,.20,.15,.20,.40,.35,1,.15,.60,1,1],
-      'wfh':       [.60,.60,.70,.80,.85,.85,.95,.95,.60,.80,.85,1]
+      'base':    [1,.85,.40,.90,.70,.60,.55,.30,.50,.40,.20,.30],
+      'town':    [1,.50,.35,.75,.85,.60,.45,.30,.60,.50,.25,.25],
+      'water':   [.30,1,1,.60,.10,.70,.90,.60,.10,.10,.20,1],
+      'south':   [.20,.50,.75,.20,.10,.20,.85,1,.05,.30,0,.70],
+      'cherry':  [.20,.10,0,.35,.30,.55,0,0,.85,.20,1,0],
+      'wfh':     [.60,.80,.90,.70,.70,.85,.75,.80,.70,.70,.75,.90]
     },
     priority: {
-      'schools':   [.60,.50,1,.95,.90,.80,.55,.50,.80,.45,.50,.45],
-      'walk':      [1,1,.50,.80,.40,.75,.60,.50,.35,.40,.40,.35],
-      'space':     [.20,.10,.45,.60,.85,.80,.90,.95,.30,.60,.60,1],
-      'newbuild':  [.10,.60,.40,.60,1,.70,.85,.95,.80,.30,.90,.95],
-      'value':     [.10,.35,.35,.50,.60,.75,.90,.95,.50,.85,.90,1],
-      'character': [1,.30,.40,.70,.20,.80,.60,.35,.20,.55,.20,.25],
-      'lowmaint':  [.30,1,.60,.50,.55,.50,.45,.50,.90,.40,.60,.40]
+      'water':     [.30,1,1,.70,0,.90,.60,.85,.10,0,.70,1],
+      'walk':      [.60,.30,.70,.10,.30,.90,.20,.20,.30,.30,1,.60],
+      'space':     [.30,.50,.10,.60,1,.50,.50,.60,.90,1,.50,0],
+      'newbuild':  [.70,.60,.50,.70,.90,.60,1,.80,.40,.30,.60,.30],
+      'value':     [.90,.40,.20,.70,.90,.40,.70,.40,1,1,.80,.10],
+      'character': [.30,.50,.40,.30,.30,1,.20,.40,.40,.30,1,.60],
+      'lowmaint':  [.80,.50,.80,.50,.40,.50,.60,.50,.30,.20,.60,.70]
     },
     age: {
-      'historic':    [1,.20,.35,.60,.15,.85,.55,.30,.15,.50,.20,.20],
-      'established': [.60,.65,1,.85,.45,.65,.50,.40,.70,.90,.45,.30],
-      'new':         [.10,.60,.45,.60,1,.75,.85,.95,.85,.30,.90,.95]
+      'historic':    [.30,.30,.30,.30,.30,1,.10,.30,.50,.40,1,.50],
+      'established': [.90,.70,.70,.80,.60,.70,.40,.70,.60,.70,.70,.70],
+      'new':         [.70,.60,.50,.70,.90,.60,1,.80,.40,.30,.50,.30]
     },
     weekend: {
-      'dining':     [1,1,.60,.60,.35,.55,.35,.30,.45,.35,.30,.25],
-      'greenways':  [.65,.55,1,.80,.85,.70,.60,.60,.85,.75,.70,.60],
-      'mainstreet': [.50,.35,.45,1,.50,.95,.90,.80,.25,.50,.45,.75],
-      'golf':       [.55,.50,.90,.70,.70,.80,.60,.60,.40,.50,.45,.50]
+      'dining':     [.80,.40,.70,.30,.30,.80,.30,.40,.20,.20,1,.50],
+      'greenways':  [.80,.50,.50,.60,.60,.70,.50,.50,.80,.50,.70,.40],
+      'mainstreet': [.40,.50,.60,.30,.80,1,.40,.30,.60,.80,.90,.60],
+      'boat':       [.40,1,1,.70,.10,.90,.60,.80,.20,.10,.70,1]
     }
   };
 
   var QUESTIONS = [
     { key:'budget', w:3.0, q:'What is the honest top of your budget?',
-      opts:[['under400','Under $400,000','The value belt'],['400-600','$400,000 to $600,000','The biggest slice of the market'],
-            ['600-900','$600,000 to $900,000','Move-up territory'],['900+','$900,000 and up','Where character costs money']] },
+      opts:[['under250','Under $250,000','Starter homes and land'],['250-400','$250,000 to $400,000','Where most of the county trades'],
+            ['400-650','$400,000 to $650,000','Move-up and near the water'],['650+','$650,000 and up','Waterfront and the island']] },
     { key:'commute', w:2.5, q:'Where do you actually have to be on a Tuesday morning?',
-      opts:[['downtown','On or near base','Lejeune or New River'],['rtp','Jacksonville proper','In town, short drive'],
-            ['north','Toward the water','Sneads Ferry or the island'],['east','Wilmington or points south','Down 17'],
-            ['wfh','Nowhere, I work from home','The commute is not the constraint']] },
+      opts:[['base','Camp Lejeune or New River','Main Gate, Piney Green, Stone Bay and the rest'],['town','Jacksonville proper','In town, short drive'],
+            ['water','Toward the water','Sneads Ferry or the island'],['south','Wilmington or points south','Down 17'],
+            ['cherry','Cherry Point or New Bern','Up 17 toward Havelock'],['wfh','Nowhere, I work from home','The commute is not the constraint']] },
     { key:'priority', w:2.5, q:'If you could only get one of these, which one?',
-      opts:[['schools','Strong school assignment','Confirm it address by address'],['walk','Walk to dinner and coffee','Density buys you this'],
-            ['space','Land and elbow room','Acreage moves you outward'],['newbuild','Everything brand new','No renovation projects'],
-            ['value','The most house per dollar','Pure price per square foot'],['character','Real architectural character','Pre-1960 housing stock'],
+      opts:[['water','Water, a boat ramp or the beach','Coastal living first'],['walk','Walk to dinner and coffee','A real downtown'],
+            ['space','Land and elbow room','Acreage moves you inland'],['newbuild','Everything brand new','No renovation projects'],
+            ['value','The most house per dollar','Pure price per square foot'],['character','Real architectural character','Historic districts'],
             ['lowmaint','Low maintenance living','Townhome or lock and leave']] },
     { key:'age', w:1.5, q:'What kind of house are you picturing?',
-      opts:[['historic','Something with history','1900s to 1960s'],['established','Established, 1990s to 2010s','Mature trees, settled streets'],
+      opts:[['historic','Something with history','Older homes and historic districts'],['established','Established, 1990s to 2010s','Mature trees, settled streets'],
             ['new','Brand new construction','2018 and newer']] },
     { key:'weekend', w:1.5, q:'What does a good Saturday look like?',
-      opts:[['dining','Restaurants, bars, walkable blocks',''],['greenways','Greenways, parks and trails',''],
-            ['mainstreet','Small town main street and a farmers market',''],['golf','Golf course or the lake','']] },
+      opts:[['dining','Restaurants, bars, walkable blocks',''],['greenways','Parks, trails and the forest',''],
+            ['mainstreet','Small town main street and a festival',''],['boat','On the water: boat, beach or fishing','']] },
     { key:'timeline', w:0, q:'When are you hoping to be in the new place?',
       opts:[['Within 30 days','Within 30 days',''],['One to three months','One to three months',''],
             ['Three to six months','Three to six months',''],['Later this year or next','Later this year or next','']] }

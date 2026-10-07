@@ -178,28 +178,46 @@
     if (sel.parentNode.classList.contains('field')) sel.parentNode.classList.add('full');
   });
 
-  /* ---------- Demo form handling (no backend on the demo) ---------- */
+  /* ---------- Lead forms: submit to Netlify Forms, emailed to Josh ---------- */
   document.querySelectorAll('form[data-demo]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.classList.contains('lead-form')) {
-        var b = form.querySelector('button[type=submit]');
-        if (b) { b.textContent = 'Demo only'; b.disabled = true; }
+        /* Home search bar: no IDX yet, send people to Buy */
+        var q = (form.querySelector('input[name=q]') || {}).value || '';
+        window.location.href = '/contact?search=' + encodeURIComponent(q) + '#connect';
         return;
       }
+      var btn = form.querySelector('button[type=submit]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      var data = new FormData(form);
+      if (!data.get('form-name')) data.set('form-name', form.getAttribute('name') || 'lead');
+      data.set('page', window.location.pathname);
+      var body = new URLSearchParams();
+      data.forEach(function (v, k) { body.append(k, v); });
       var name = (form.querySelector('input[name=first_name], input[name=name]') || {}).value || '';
-      var h = Math.min(Math.max(form.offsetHeight, 260), 380);
-      form.style.minHeight = h + 'px';
-      form.innerHTML =
-        '<div class="form-done">' +
-        '<div class="tick" aria-hidden="true">&#10003;</div>' +
-        '<h3>' + (name ? 'Thanks, ' + name.replace(/[<>&"]/g, '') + '.' : 'Got it.') + '</h3>' +
-        '<p>On a live build this would be in the CRM already, tagged by source and page, with an ' +
-        'auto-reply on its way and a task on the right person\'s list.</p>' +
-        '<p class="form-note" style="margin-top:18px">This is a demo site, so nothing was actually sent. ' +
-        'Want one of these for your own business? <a href="https://www.conciergeforrealtors.com/realtor-authority-website" ' +
-        'target="_blank" rel="noopener" style="color:var(--red)">Real Estate Concierge Services Co</a> built it.</p>' +
-        '</div>';
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); done(true); })
+        .catch(function () { done(false); });
+      function done(ok) {
+        var h = Math.min(Math.max(form.offsetHeight, 260), 380);
+        form.style.minHeight = h + 'px';
+        form.innerHTML = ok ?
+          '<div class="form-done"><div class="tick" aria-hidden="true">&#10003;</div>' +
+          '<h3>' + (name ? 'Thanks, ' + name.replace(/[<>&"]/g, '') + '.' : 'Got it.') + '</h3>' +
+          '<p>This came straight to me. I will get back to you personally, usually the same day.</p>' +
+          '<p class="form-note" style="margin-top:18px">Need me sooner? Call or text <a href="tel:+19103335433" style="color:var(--red)">(910) 333-5433</a>.</p></div>'
+          :
+          '<div class="form-done"><h3>That did not go through.</h3>' +
+          '<p>Sorry about that. Call or text me at <a href="tel:+19103335433" style="color:var(--red)">(910) 333-5433</a> ' +
+          'or email <a href="mailto:homessoldbyjosh@gmail.com" style="color:var(--red)">homessoldbyjosh@gmail.com</a> and I will take it from there.</p></div>';
+      }
     });
   });
+  /* Prefill the contact form from the home search bar until IDX is connected */
+  (function () {
+    var q = new URLSearchParams(window.location.search).get('search');
+    var ta = document.querySelector('form.lead-form textarea[name=message]');
+    if (q && ta) { ta.value = 'I am looking for: ' + q; }
+  })();
 })();

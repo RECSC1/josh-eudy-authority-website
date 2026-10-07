@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.hero-media video{display:none}</style></noscript>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23C8102E' text-anchor='middle'>E</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23D8B45C' text-anchor='middle'>E</text></svg>">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -26,9 +26,10 @@
 <header class="nav over-hero">
   <div class="nav-in">
     <a class='brand' href='/'><b>Eudy</b><span>Jacksonville &middot; North Carolina</span></a>
-    <nav aria-label="Primary"><ul class="nav-links"><li><a href='/buy'>Buy</a></li><li><a aria-current='page' href='/sell'>Sell</a></li><li><a href='/rent'>Rent</a></li><li><a href='/agents'>About</a></li><li><a href='/areas'>Areas We Serve</a></li><li><a href='/services'>Services</a></li><li><a href='/tools'>Tools</a></li><li><a href='/resources'>Resources</a></li></ul></nav>
+    <nav aria-label="Primary"><ul class="nav-links"><li><a href='/buy'>Buy</a></li><li><a aria-current='page' href='/sell'>Sell</a></li><li><a href='/rent'>Rent</a></li><li><a href='/agents'>About</a></li><li><a href='/portfolio'>Portfolio</a></li><li><a href='/areas'>Areas</a></li><li><a href='/services'>Services</a></li><li><a href='/resources'>Resources</a></li></ul></nav>
     <div class="nav-cta">
-      <a class='btn btn-sm' href='/contact'>Let's Talk</a>
+      <a class='btn btn-sm btn-cash' href='/cash-offer'><span class='long'>Get a </span>Cash Offer</a>
+      <a class='btn btn-sm btn-talk' href='/contact'>Let's Talk</a>
       <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -39,7 +40,7 @@
     <button class="x" aria-label="Close menu">&times;</button>
   </div>
   <nav aria-label="Mobile">
-    <a href='/'>Home</a><a href='/buy'>Buy</a><a href='/sell'>Sell</a><a href='/rent'>Rent</a><a href='/agents'>About</a><a href='/areas'>Areas We Serve</a><a href='/services'>Services</a><a href='/tools'>Tools</a><a href='/resources'>Resources</a><a href='/contact'>Contact</a>
+    <a href='/'>Home</a><a href='/buy'>Buy</a><a href='/sell'>Sell</a><a href='/rent'>Rent</a><a href='/agents'>About</a><a href='/portfolio'>Portfolio</a><a href='/areas'>Areas We Serve</a><a href='/services'>Services</a><a href='/tools'>Tools</a><a href='/resources'>Resources</a><a href='/cash-offer'>Get a Cash Offer</a><a href='/contact'>Contact</a>
   </nav>
   <div class="drawer-foot">
     <p class="small mb0"><a href="tel:+19103335433">(910) 333-5433</a><br><a href="mailto:homessoldbyjosh@gmail.com">homessoldbyjosh@gmail.com</a></p>
@@ -64,7 +65,7 @@
       <div class="reveal">
         <p class="eyebrow">Home Valuation</p>
         <h2>Find out what your home is <em>actually worth.</em></h2>
-        <p class="lede" style="margin-top:1.2rem">Not the automated estimate. A real number, from a person who has walked the comparable houses on your street and knows which ones had a finished basement and which ones had a bad roof.</p>
+        <p class="lede" style="margin-top:1.2rem">Not the automated estimate. A real number, from a person who has walked the comparable houses on your street and knows which ones had a new roof and which ones took water in Florence.</p>
         <p>You will get a range, the three comps that drive it, and an honest read on what one week of prep would do to the top of that range. No obligation, and we will tell you if this is a bad time to sell.</p>
       </div>
       <form class="reveal lead-form" data-demo name="home-value" method="POST" data-netlify="true">
@@ -84,6 +85,22 @@
   </div>
 </section>
 
+<!-- PRODUCTION FIGURES: from Josh, recorded call Oct 6 2026 (seller side 2025: 49; total 2025: 76; 2022 to 2026 YTD: 307).
+     Josh to confirm on draft review before launch. -->
+<section class="pad dark">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="eyebrow">The Proof</p>
+      <h2>Seller heavy. <em>On purpose.</em></h2>
+      <p class="lede" style="color:#B9B7B4;margin-top:1rem;max-width:62ch">Most agents in this market mostly work with buyers. Most of my closings last year were listings. That is the number to ask any agent before you hand them your house.</p></div></div>
+    <div class="proof-strip reveal">
+      <div><div class="n">76</div><div class="l">Homes closed in 2025</div></div>
+      <div><div class="n">49</div><div class="l">Of those were listings</div></div>
+      <div><div class="n">300+</div><div class="l">Closings since 2022</div></div>
+    </div>
+    <p class="small" style="color:#8E8B87;margin-top:1.6rem">And if a listing is not the right fit, there is a second option most agents cannot offer: <a href="/cash-offer" style="color:var(--red-light);text-decoration:underline">a cash offer from me directly</a>, side by side with the listing plan, so you can compare real numbers.</p>
+  </div>
+</section>
+
 <section class="pad shell">
   <div class="wrap">
     <div class="sec-head reveal"><div><p class="eyebrow">The Listing Plan</p>
@@ -91,6 +108,7 @@
       <p>Not a bullet list on a proposal. This is the work, and it happens on every listing regardless of price.</p></div></div>
     <div class="grid g3">
       <div class="plan-card reveal"><div><h3>01 &nbsp;Pricing strategy</h3><p>Block level comps, three modeled price points, and a written recommendation with the reasoning attached. You make the call with the same information we have.</p></div></div>
+      <div class="plan-card reveal"><div><h3>02 &nbsp;A punch list with real numbers</h3><p>What to fix, what to leave alone, and what each item is worth at the closing table. Most sellers spend money on the wrong things. You will not.</p></div></div>
       <div class="plan-card reveal"><div><h3>03 &nbsp;Full media in one visit</h3><p>Professional listing media, coordinated and scheduled so your listing goes live looking like it should.</p></div></div>
       <div class="plan-card reveal"><div><h3>04 &nbsp;Pre market outreach</h3><p>The buyer agents working your price band get a call before the sign goes up. This is where the first offers usually come from.</p></div></div>
       <div class="plan-card reveal"><div><h3>05 &nbsp;Search and social distribution</h3><p>Syndication, a real property page that ranks, paid placement in the right zip codes, and a Google Business Profile post the day it goes live.</p></div></div>
@@ -156,15 +174,13 @@
         <a class='brand' href='/'><b>Eudy</b><span>Jacksonville &middot; North Carolina</span></a>
         <p class="small" style="margin-top:22px;max-width:34ch">A Jacksonville broker for people who want a plan, a price and a straight answer.</p>
         <div class="social">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5V6.9c0-.7.2-1.2 1.3-1.2H17V2.6a19 19 0 0 0-2.4-.1c-2.5 0-4.2 1.5-4.2 4.3v1.7H7.8v3.2h2.6V21H14v-9.3h2.6l.4-3.2z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1 0 18.7 12 6.7 6.7 0 0 0 12 5.3zm0 11A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.3a1.6 1.6 0 1 1-1.6-1.6 1.6 1.6 0 0 1 1.6 1.6z"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 21H3.4V9.4h3.5zM5.1 7.9A2 2 0 1 1 7.1 6a2 2 0 0 1-2 1.9zM21 21h-3.5v-5.6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.7H9.9V9.4h3.3V11a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3z"/></svg></a>
-        </div>
+          <a href="https://www.instagram.com/realtor.nc/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1 0 18.7 12 6.7 6.7 0 0 0 12 5.3zm0 11A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.3a1.6 1.6 0 1 1-1.6-1.6 1.6 1.6 0 0 1 1.6 1.6z"/></svg></a>
+          </div>
       </div>
       <div>
         <h4>Explore</h4>
         <a href='/buy'>Buy</a><br><a href='/sell'>Sell</a><br><a href='/rent'>Rent</a><br>
-        <a href='/agents'>About Josh</a><br><a href='/areas'>Areas We Serve</a><br><a href='/services'>Services</a><br>
+        <a href='/agents'>About Josh</a><br><a href='/portfolio'>Portfolio</a><br><a href='/cash-offer'>Get a Cash Offer</a><br><a href='/areas'>Areas We Serve</a><br><a href='/services'>Services</a><br>
         <a href='/tools'>Tools</a><br><a href='/resources'>Resources</a>
       </div>
       <div>
@@ -182,7 +198,7 @@
     </div>
     <p class="disclaimer">Josh Eudy, Broker, NC Real Estate License #300792. Realty ONE Group Revolution. Each office is independently owned and operated. Equal Housing Opportunity.</p>
     <div class="footer-bottom">
-      <span>&copy; 2026 Josh Eudy, Realtor. Demo build by <a href="https://www.conciergeforrealtors.com">Real Estate Concierge Services Co, LLC</a>.</span>
+      <span>&copy; 2026 Josh Eudy, Realtor. Website by <a href="https://www.oakandalgorithm.com">Oak &amp; Algorithm</a>.</span>
       <span><a href="#">Privacy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a> &nbsp;&middot;&nbsp; <a href="#">Accessibility</a> &nbsp;&middot;&nbsp; <a href="#">Fair Housing</a></span>
     </div>
   </div>
