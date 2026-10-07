@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools | Neighborhood Matcher, Net Proceeds &amp; Payment Calculators | Josh Eudy, Realtor</title>
+<meta name="description" content="Free Jacksonville real estate tools: match yourself to the right Onslow County town, calculate your net proceeds with North Carolina excise tax, and see the real monthly cost of a house.">
+<link rel="canonical" href="https://josheudy.com/tools">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Josh Eudy, Realtor">
+<meta property="og:title" content="Tools | Neighborhood Matcher, Net Proceeds &amp; Payment Calculators | Josh Eudy, Realtor">
+<meta property="og:description" content="Free Jacksonville real estate tools: match yourself to the right Onslow County town, calculate your net proceeds with North Carolina excise tax, and see the real monthly cost of a house.">
+<meta property="og:url" content="https://josheudy.com/tools">
+<meta property="og:image" content="https://josheudy.com/assets/img/hero-tools.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex, nofollow"><!-- REMOVE AT LAUNCH -->
+<meta name="theme-color" content="#0A0A0A">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.hero-media video{display:none}</style></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23C8102E' text-anchor='middle'>E</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav over-hero">
+  <div class="nav-in">
+    <a class='brand' href='/'><b>Eudy</b><span>Jacksonville &middot; North Carolina</span></a>
+    <nav aria-label="Primary"><ul class="nav-links"><li><a href='/buy'>Buy</a></li><li><a href='/sell'>Sell</a></li><li><a href='/rent'>Rent</a></li><li><a href='/agents'>About</a></li><li><a href='/areas'>Areas We Serve</a></li><li><a href='/services'>Services</a></li><li><a aria-current='page' href='/tools'>Tools</a></li><li><a href='/resources'>Resources</a></li></ul></nav>
+    <div class="nav-cta">
+      <a class='btn btn-sm' href='/contact'>Let's Talk</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" role="dialog" aria-label="Menu">
+  <div class="drawer-top">
+    <a class='brand' href='/'><b>Eudy</b><span>Jacksonville &middot; North Carolina</span></a>
+    <button class="x" aria-label="Close menu">&times;</button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href='/'>Home</a><a href='/buy'>Buy</a><a href='/sell'>Sell</a><a href='/rent'>Rent</a><a href='/agents'>About</a><a href='/areas'>Areas We Serve</a><a href='/services'>Services</a><a href='/tools'>Tools</a><a href='/resources'>Resources</a><a href='/contact'>Contact</a>
+  </nav>
+  <div class="drawer-foot">
+    <p class="small mb0"><a href="tel:+19103335433">(910) 333-5433</a><br><a href="mailto:homessoldbyjosh@gmail.com">homessoldbyjosh@gmail.com</a></p>
+  </div>
+</div>
+
+<section class="banner">
+  <img src="assets/img/hero-tools.jpg" alt="" fetchpriority="high">
+  <div class="scrim"></div>
+  <div class="crumbs"><div class="wrap"><a href='/'>Home</a> / Tools</div></div>
+  <div class="banner-in">
+    <p class="eyebrow on-dark">Tools</p>
+    <h1>Do the math <em>before</em> you fall in love.</h1>
+    <p>Three calculators we actually use with clients. No email wall, no fake instant valuation, no gate. Run the numbers, then call us when you want to argue with them.</p>
+  </div>
+</section>
+
+<main id="main">
+
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:0">
+      <div>
+        <p class="eyebrow">Jump To</p>
+        <div class="anchor-chips">
+          <a href="#matcher">Neighborhood Matcher</a>
+          <a href="#netsheet">Seller Net Proceeds</a>
+          <a href="#payment">Payment &amp; Affordability</a>
+        </div>
+      </div>
+      <p class="small" style="max-width:34ch;margin:0;color:var(--muted)">Everything runs in your browser. Nothing you type here is sent anywhere unless you ask us to look at it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOL 1: NEIGHBORHOOD MATCHER ============ -->
+<section class="pad-sm" id="matcher">
+  <div class="wrap">
+    <div class="tool reveal">
+      <div class="tool-head">
+        <p class="eyebrow">Tool 01</p>
+        <h2>Neighborhood <em>Matcher</em></h2>
+        <p>Six questions. Onslow County is not one market, and the difference between Hubert and New Bern is not a preference, it is a completely different set of tradeoffs. This narrows twelve towns down to the three worth your Saturday.</p>
+      </div>
+      <div class="tool-body">
+        <div class="tool-inputs">
+          <div class="quiz-progress"><i id="quiz-bar" style="width:0%"></i></div>
+          <div id="quiz-steps"></div>
+        </div>
+        <div class="tool-output">
+          <div id="quiz-results">
+            <p class="eyebrow">How This Works</p>
+            <h3 style="color:var(--black);margin-bottom:1rem">Answer on the left. Your matches show up here.</h3>
+            <p class="small">We weight budget and commute hardest, because those two eliminate more towns than everything else combined. School assignment is deliberately not a question, because in Onslow County it is decided address by address and it moves. That one we check together.</p>
+            <ul class="vlist" style="margin-top:1.4rem">
+              <li><b>Twelve towns scored</b> across budget, commute, priorities, housing age and how you spend a Saturday.</li>
+              <li><b>Top three returned</b> with a fit percentage and the honest tradeoff for each.</li>
+              <li><b>No email required.</b> Take the results and go drive them yourself if you want.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOL 2: NET PROCEEDS ============ -->
+<section class="pad-sm" id="netsheet">
+  <div class="wrap">
+    <div class="tool reveal">
+      <div class="tool-head">
+        <p class="eyebrow">Tool 02</p>
+        <h2>Seller <em>Net Proceeds</em></h2>
+        <p>The number that actually matters is not what your house sells for. It is what lands in your account. This is the same net sheet we build for listing appointments, including the North Carolina excise tax most calculators forget.</p>
+      </div>
+      <div class="tool-body">
+        <div class="tool-inputs">
+          <div class="tool-row"><label for="ns-price">Estimated sale price</label>
+            <div class="inp"><span>$</span><input id="ns-price" type="number" value="315000" min="0" step="5000" inputmode="numeric"></div></div>
+          <div class="tool-row"><label for="ns-payoff">Mortgage payoff</label>
+            <div class="inp"><span>$</span><input id="ns-payoff" type="number" value="185000" min="0" step="1000" inputmode="numeric"></div></div>
+          <div class="tool-row two">
+            <div><label for="ns-comp">Total agent compensation <span class="hint">both sides</span></label>
+              <div class="inp"><input id="ns-comp" type="number" value="5" min="0" max="12" step="0.25" inputmode="decimal"><span>%</span></div></div>
+            <div><label for="ns-conc">Buyer concessions</label>
+              <div class="inp"><span>$</span><input id="ns-conc" type="number" value="0" min="0" step="500" inputmode="numeric"></div></div>
+          </div>
+          <div class="tool-row two">
+            <div><label for="ns-prep">Prep, repairs, staging</label>
+              <div class="inp"><span>$</span><input id="ns-prep" type="number" value="4500" min="0" step="250" inputmode="numeric"></div></div>
+            <div><label for="ns-attorney">Attorney and closing fees</label>
+              <div class="inp"><span>$</span><input id="ns-attorney" type="number" value="850" min="0" step="50" inputmode="numeric"></div></div>
+          </div>
+          <div class="tool-row"><label for="ns-other">Other, prorations, HOA transfer, home warranty</label>
+            <div class="inp"><span>$</span><input id="ns-other" type="number" value="1200" min="0" step="100" inputmode="numeric"></div></div>
+          <p class="tool-note">North Carolina excise tax, the line people call revenue stamps, is calculated automatically at $1.00 per $500 of sale price. Property tax prorations depend on your closing date and are not included here.</p>
+        </div>
+        <div class="tool-output">
+          <div class="out-total"><small>Estimated net to you</small><b id="ns-total">$0</b></div>
+          <div class="bar" id="ns-bar"></div>
+          <div class="bar-key">
+            <span><em style="background:#0A0A0A"></em>Loan payoff</span>
+            <span><em style="background:#C8102E"></em>Compensation</span>
+            <span><em style="background:#8A8A8A"></em>Closing costs</span>
+            <span><em style="background:#D9D5D0"></em>Your net</span>
+          </div>
+          <ul class="breakdown" id="ns-lines" style="margin-top:22px"></ul>
+          <a class='btn mt2' href='/sell#value'>Get a real valuation for this address</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOL 3: PAYMENT ============ -->
+<section class="pad-sm" id="payment">
+  <div class="wrap">
+    <div class="tool reveal">
+      <div class="tool-head">
+        <p class="eyebrow">Tool 03</p>
+        <h2>Payment &amp; <em>Affordability</em></h2>
+        <p>Principal and interest is the number lenders quote. Tax, insurance and mortgage insurance is the number that shows up in your account. Enter your combined Onslow County and city tax rate to see the real monthly number, not the one that is off by a few hundred dollars.</p>
+      </div>
+      <div class="tool-body">
+        <div class="tool-inputs">
+          <div class="tool-row"><label for="p-price">Home price</label>
+            <div class="inp"><span>$</span><input id="p-price" type="number" value="315000" min="0" step="5000" inputmode="numeric"></div></div>
+          <div class="tool-row"><label for="p-down">Down payment <span class="hint" id="p-down-out"></span></label>
+            <input id="p-down" type="range" min="0" max="50" step="1" value="20"></div>
+          <div class="tool-row two">
+            <div><label for="p-rate">Interest rate</label>
+              <div class="inp"><input id="p-rate" type="number" value="6.4" min="0" max="15" step="0.05" inputmode="decimal"><span>%</span></div></div>
+            <div><label for="p-term">Loan term</label>
+              <div class="inp"><select id="p-term"><option value="30">30 years</option><option value="20">20 years</option><option value="15">15 years</option></select></div></div>
+          </div>
+          <div class="tool-row two">
+            <div><label for="p-tax">Property tax rate <span class="hint">Onslow County + Jacksonville</span></label>
+              <!-- UNVERIFIED: combined Onslow County + City of Jacksonville property
+tax rate per $100. 0.94 was the Wake County template default and is
+wrong. Confirm against the official Onslow County 2026 tax rate document
+before launch, then set value and remove this comment. -->
+              <div class="inp"><input id="p-tax" type="number" value="0" min="0" max="3" step="0.01" inputmode="decimal" data-needs-verification="TRUE"><span>%</span></div></div>
+            <div><label for="p-ins">Insurance per year</label>
+              <div class="inp"><span>$</span><input id="p-ins" type="number" value="1900" min="0" step="50" inputmode="numeric"></div></div>
+          </div>
+          <div class="tool-row"><label for="p-hoa">HOA dues per month</label>
+            <div class="inp"><span>$</span><input id="p-hoa" type="number" value="0" min="0" step="10" inputmode="numeric"></div></div>
+          <p class="tool-note">Mortgage insurance is added automatically at 0.5% per year when the down payment is under 20%. Estimates only. Your lender's number is the one that counts.</p>
+        </div>
+        <div class="tool-output">
+          <div class="out-total"><small>Estimated monthly payment</small><b id="p-total">$0</b></div>
+          <div class="bar" id="p-bar"></div>
+          <div class="bar-key">
+            <span><em style="background:#0A0A0A"></em>Principal &amp; interest</span>
+            <span><em style="background:#C8102E"></em>Property tax</span>
+            <span><em style="background:#8A8A8A"></em>Insurance</span>
+            <span><em style="background:#C9C4BE"></em>PMI &amp; HOA</span>
+          </div>
+          <ul class="breakdown" id="p-lines" style="margin-top:22px"></ul>
+          <ul class="breakdown" style="margin-top:26px;border-top:1px solid var(--line);padding-top:16px">
+            <li><span>Loan amount</span><b id="p-loan">$0</b></li>
+            <li><span>Gross income to stay near 28%</span><b id="p-income">$0</b></li>
+            <li><span>Total interest over the loan</span><b id="p-interest">$0</b></li>
+          </ul>
+          <a class='btn mt2' href='/contact'>Get introduced to a lender</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad dark">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><p class="eyebrow">Also In The System</p>
+      <h2>Built, and turned on <em>when a client needs it.</em></h2>
+      <p style="color:#B9B7B4">We do not put every tool on the front page. Clutter costs more conversions than a missing calculator does. Ask and we will switch one on for your situation.</p></div></div>
+    <div class="grid g4">
+      <div class="mini reveal" style="background:transparent;border-color:rgba(255,255,255,.16)"><h4>Buy vs Rent Breakeven</h4><p style="color:#B9B7B4">The month your purchase overtakes renting, using real Onslow County tax and appreciation inputs.</p></div>
+      <div class="mini reveal" style="background:transparent;border-color:rgba(255,255,255,.16)"><h4>Closing Cost Estimator</h4><p style="color:#B9B7B4">Buyer side, North Carolina specific, including attorney fees and the due diligence money at risk.</p></div>
+      <div class="mini reveal" style="background:transparent;border-color:rgba(255,255,255,.16)"><h4>Commute Reality Check</h4><p style="color:#B9B7B4">Drive time from any address at 8am on a Tuesday, not at 2pm on a Sunday when the map is lying to you.</p></div>
+      <div class="mini reveal" style="background:transparent;border-color:rgba(255,255,255,.16)"><h4>Prep ROI Planner</h4><p style="color:#B9B7B4">What paint, landscaping and a countertop actually return in your price band before you spend the money.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad shell">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">One Warning</p>
+        <h2>A calculator has <em>never</em> won a house.</h2>
+        <p class="lede" style="margin-top:1.2rem">These are good for narrowing. They are useless for deciding. Every one of these numbers moves when you put a real address into it, and the ones that move most are the ones that cost the most: school assignment, flood zone, HOA reserves, the roof, and what the seller actually needs.</p>
+        <p>Use the tools. Then let's go look at the house.</p>
+        <a class='btn mt2' href='/contact'>Start a conversation</a>
+      </div>
+      <div class="img-frame reveal" style="aspect-ratio:4/3"><img src="assets/img/feat-handshake.jpg" alt="Client meeting at a table" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+</main>
+<div class="sticky-cta"><a href='/sell#value'>What is my home worth?</a></div>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class='brand' href='/'><b>Eudy</b><span>Jacksonville &middot; North Carolina</span></a>
+        <p class="small" style="margin-top:22px;max-width:34ch">A Jacksonville broker for people who want a plan, a price and a straight answer.</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5V6.9c0-.7.2-1.2 1.3-1.2H17V2.6a19 19 0 0 0-2.4-.1c-2.5 0-4.2 1.5-4.2 4.3v1.7H7.8v3.2h2.6V21H14v-9.3h2.6l.4-3.2z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1 0 18.7 12 6.7 6.7 0 0 0 12 5.3zm0 11A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.3a1.6 1.6 0 1 1-1.6-1.6 1.6 1.6 0 0 1 1.6 1.6z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 21H3.4V9.4h3.5zM5.1 7.9A2 2 0 1 1 7.1 6a2 2 0 0 1-2 1.9zM21 21h-3.5v-5.6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.7H9.9V9.4h3.3V11a3.7 3.7 0 0 1 3.3-1.8c3.5 0 4.2 2.3 4.2 5.3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href='/buy'>Buy</a><br><a href='/sell'>Sell</a><br><a href='/rent'>Rent</a><br>
+        <a href='/agents'>About Josh</a><br><a href='/areas'>Areas We Serve</a><br><a href='/services'>Services</a><br>
+        <a href='/tools'>Tools</a><br><a href='/resources'>Resources</a>
+      </div>
+      <div>
+        <h4>Areas</h4>
+        <a href='/areas'>Jacksonville</a><br><a href='/areas'>Sneads Ferry</a><br><a href='/areas'>Surf City</a><br><a href='/areas'>Hubert</a><br><a href='/areas'>Richlands</a><br><a href='/areas'>Swansboro</a><br><a href='/areas'>Holly Ridge</a><br><a href='/areas'>Hampstead</a>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <p class="small" style="line-height:1.9">
+          <a href="tel:+19103335433">(910) 333-5433</a><br>
+          <a href="mailto:homessoldbyjosh@gmail.com">homessoldbyjosh@gmail.com</a><br>
+        </p>
+        <a class='btn btn-sm' href='/contact' style='margin-top:12px'>Start a Conversation</a>
+      </div>
+    </div>
+    <p class="disclaimer">Josh Eudy, Broker, NC Real Estate License #300792. Realty ONE Group Revolution. Each office is independently owned and operated. Equal Housing Opportunity.</p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Josh Eudy, Realtor. Demo build by <a href="https://www.conciergeforrealtors.com">Real Estate Concierge Services Co, LLC</a>.</span>
+      <span><a href="#">Privacy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a> &nbsp;&middot;&nbsp; <a href="#">Accessibility</a> &nbsp;&middot;&nbsp; <a href="#">Fair Housing</a></span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Josh Eudy",
+  "alternateName": "Joshua Eudy",
+  "jobTitle": "Broker",
+  "description": "U.S. Army veteran and Military Relocation Professional serving Jacksonville, Onslow County, Sneads Ferry and the Topsail corridor. Licensed North Carolina broker and active principal buyer.",
+  "url": "https://josheudy.com/",
+  "image": "https://josheudy.com/assets/img/agent-1.jpg",
+  "telephone": "+1-910-333-5433",
+  "email": "homessoldbyjosh@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "915 Vernon Dr",
+    "addressLocality": "Jacksonville",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "worksFor": {
+    "@type": "RealEstateOrganization",
+    "name": "ONE LUX at Realty ONE Group Revolution"
+  },
+  "hasCredential": [
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "North Carolina Real Estate Broker License", "identifier": "300792"},
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Military Relocation Professional (MRP)"},
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Seniors Real Estate Specialist (SRES)"},
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Luxury Homes Certification"}
+  ],
+  "knowsAbout": [
+    "Camp Lejeune relocation",
+    "MCAS New River relocation",
+    "PCS moves and military relocation",
+    "VA loans",
+    "Manufactured and mobile home sales",
+    "Land and lot purchases in eastern North Carolina",
+    "Investment and rental property",
+    "Coastal flood zones and insurance",
+    "Onslow County real estate"
+  ],
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Onslow County, NC"},
+    {"@type": "AdministrativeArea", "name": "Pender County, NC"},
+    {"@type": "City", "name": "Jacksonville, NC"},
+    {"@type": "City", "name": "Sneads Ferry, NC"},
+    {"@type": "City", "name": "Surf City, NC"},
+    {"@type": "City", "name": "Topsail Beach, NC"},
+    {"@type": "City", "name": "Holly Ridge, NC"},
+    {"@type": "City", "name": "Hubert, NC"},
+    {"@type": "City", "name": "Swansboro, NC"},
+    {"@type": "City", "name": "Richlands, NC"},
+    {"@type": "City", "name": "Maysville, NC"},
+    {"@type": "City", "name": "Beulaville, NC"},
+    {"@type": "City", "name": "Hampstead, NC"},
+    {"@type": "City", "name": "New Bern, NC"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast is the Jacksonville market actually moving right now?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your price band, which is why the countywide number is close to useless on its own. Onslow County closed 424 homes in August at a median of $313,745, with an average of 52 days on market and 3.59 months of supply. Here is the part nobody mentions: the median rose 1.54 percent while the average sale price fell 5.01 percent. The top of the market is softening faster than the middle. If you are listing above $400,000 that matters far more to you than the headline does."}}, {"@type": "Question", "name": "Do I need to be pre approved before we start looking?", "acceptedAnswer": {"@type": "Answer", "text": "You need it before you write an offer, not before you look. Go see houses first. If you fall in love with something in week one and you are not pre approved, you lose it. So get the paperwork moving early, but do not let it stall the tour."}}, {"@type": "Question", "name": "What do you charge?", "acceptedAnswer": {"@type": "Answer", "text": "Buyers sign a representation agreement that spells out the fee and how it gets paid, before we tour anything. Sellers get a listing proposal with the number, what it covers, and what it does not. No surprises, in writing, on day one."}}, {"@type": "Question", "name": "We are PCSing and cannot fly out. Can this work remotely?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it is a large share of what I do. Video tours, neighborhood drives, gate-by-gate commute mapping, flood zone and insurance checks before you commit, and a local inspector who tells you the truth. If you are coming in on orders, send me your report date and I will work backward from it."}}]}</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/tools.js" defer></script>
+</body>
+</html>
