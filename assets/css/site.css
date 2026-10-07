@@ -778,3 +778,17 @@ table.data tr:hover td{background:#FCFBFA}
   .nav-cta .btn-cash::after{inset:-3px}
   .brand span{font-size:.46rem;letter-spacing:.24em}
 }
+/* Josh's script logo (Oct 2026) */
+.brand-logo img{display:block;height:54px;width:auto}
+.nav .brand-logo .logo-dark{display:none}
+.nav.solid .brand-logo .logo-dark{display:block}
+.nav.solid .brand-logo .logo-light{display:none}
+.drawer .brand-logo img{height:48px}
+.footer .brand-logo img{height:64px;margin-bottom:.4rem}
+@media(max-width:640px){.nav .brand-logo img{height:44px}}
+.broker-mark{display:flex;align-items:center;gap:12px;margin-top:1rem}
+.broker-mark img{width:44px;height:44px}
+.brand.brand-logo{align-items:flex-start;flex-direction:row}
+.brand-logo img{width:auto!important;max-width:none;flex:none}
+.nav .brand-logo img{height:62px}
+@media(max-width:640px){.nav .brand-logo img{height:46px}}

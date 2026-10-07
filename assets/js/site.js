@@ -101,7 +101,7 @@
       var card = document.getElementById(pin.getAttribute('data-target'));
       if (card) {
         document.querySelectorAll('.area-card').forEach(function (c) { c.style.outline = ''; });
-        card.style.outline = '2px solid #C8102E';
+        card.style.outline = '2px solid #8C6B22';
         card.style.outlineOffset = '3px';
       }
     }
