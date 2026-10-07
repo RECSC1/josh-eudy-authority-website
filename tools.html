@@ -3,22 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tools | Neighborhood Matcher, Net Proceeds &amp; Payment Calculators | Josh Eudy, Realtor</title>
-<meta name="description" content="Free Jacksonville real estate tools: match yourself to the right Onslow County town, calculate your net proceeds with North Carolina excise tax, and see the real monthly cost of a house.">
+<title>Home Calculators for Jacksonville NC | Josh Eudy</title>
+<meta name="description" content="Free tools: match yourself to the right Onslow County town, estimate your net proceeds with NC excise tax, and see a real monthly payment.">
 <link rel="canonical" href="https://josheudy.com/tools">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Josh Eudy, Realtor">
-<meta property="og:title" content="Tools | Neighborhood Matcher, Net Proceeds &amp; Payment Calculators | Josh Eudy, Realtor">
-<meta property="og:description" content="Free Jacksonville real estate tools: match yourself to the right Onslow County town, calculate your net proceeds with North Carolina excise tax, and see the real monthly cost of a house.">
+<meta property="og:title" content="Home Calculators for Jacksonville NC | Josh Eudy">
+<meta property="og:description" content="Free tools: match yourself to the right Onslow County town, estimate your net proceeds with NC excise tax, and see a real monthly payment.">
 <meta property="og:url" content="https://josheudy.com/tools">
 <meta property="og:image" content="https://josheudy.com/assets/img/hero-tools.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="robots" content="noindex, nofollow"><!-- REMOVE AT LAUNCH -->
+<meta name="twitter:title" content="Home Calculators for Jacksonville NC | Josh Eudy">
+<meta name="twitter:description" content="Free tools: match yourself to the right Onslow County town, estimate your net proceeds with NC excise tax, and see a real monthly payment.">
+<meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0A0A0A">
-<link rel="stylesheet" href="assets/fonts/fonts.css?v=20261007">
-<link rel="stylesheet" href="assets/css/site.css?v=20261007">
+<link rel="stylesheet" href="assets/fonts/fonts.css?v=20261007c">
+<link rel="stylesheet" href="assets/css/site.css?v=20261007c">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.hero-media video{display:none}</style></noscript>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23D8B45C' text-anchor='middle'>E</text></svg>">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -29,11 +32,12 @@
     <div class="nav-cta">
       <a class='btn btn-sm btn-cash' href='/cash-offer'><span class='long'>Get a </span>Cash Offer</a>
       <a class='btn btn-sm btn-talk' href='/contact'>Let's Talk</a>
-      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="nav-call" href="tel:+19103335433" aria-label="Call or text Josh at (910) 333-5433"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="visually-hidden">Call</span></a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="site-drawer"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-<div class="drawer" role="dialog" aria-label="Menu">
+<div class="drawer" id="site-drawer" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="drawer-top">
     <a class='brand brand-logo' href='/' aria-label='Josh Eudy, Realtor, home'><img src='assets/img/logo-josh-eudy-dark.png' alt='Josh Eudy, Realtor' width='200' height='121'></a>
     <button class="x" aria-label="Close menu">&times;</button>
@@ -75,7 +79,7 @@
   </div>
 </section>
 
-<!-- ============ TOOL 1: NEIGHBORHOOD MATCHER ============ -->
+
 <section class="pad-sm" id="matcher">
   <div class="wrap">
     <div class="tool reveal">
@@ -90,7 +94,7 @@
           <div id="quiz-steps"></div>
         </div>
         <div class="tool-output">
-          <div id="quiz-results">
+          <div id="quiz-results" aria-live="polite">
             <p class="eyebrow">How This Works</p>
             <h3 style="color:var(--black);margin-bottom:1rem">Answer on the left. Your matches show up here.</h3>
             <p class="small">We weight budget and commute hardest, because those two eliminate more towns than everything else combined. School assignment is deliberately not a question, because in Onslow County it is decided address by address and it moves. That one we check together.</p>
@@ -106,7 +110,7 @@
   </div>
 </section>
 
-<!-- ============ TOOL 2: NET PROCEEDS ============ -->
+
 <section class="pad-sm" id="netsheet">
   <div class="wrap">
     <div class="tool reveal">
@@ -154,7 +158,7 @@
   </div>
 </section>
 
-<!-- ============ TOOL 3: PAYMENT ============ -->
+
 <section class="pad-sm" id="payment">
   <div class="wrap">
     <div class="tool reveal">
@@ -176,18 +180,14 @@
               <div class="inp"><select id="p-term"><option value="30">30 years</option><option value="20">20 years</option><option value="15">15 years</option></select></div></div>
           </div>
           <div class="tool-row two">
-            <div><label for="p-tax">Property tax rate <span class="hint">Onslow County + Jacksonville</span></label>
-              <!-- UNVERIFIED: combined Onslow County + City of Jacksonville property
-tax rate per $100. 0.94 was the Wake County template default and is
-wrong. Confirm against the official Onslow County 2026 tax rate document
-before launch, then set value and remove this comment. -->
-              <div class="inp"><input id="p-tax" type="number" value="0" min="0" max="3" step="0.01" inputmode="decimal" data-needs-verification="TRUE"><span>%</span></div></div>
+            <div><label for="p-tax">Property tax rate <span class="hint">county + town, per $100</span></label>
+              <div class="inp"><input id="p-tax" type="number" value="" placeholder="e.g. 0.75" min="0" max="3" step="0.01" inputmode="decimal"><span>%</span></div></div>
             <div><label for="p-ins">Insurance per year</label>
               <div class="inp"><span>$</span><input id="p-ins" type="number" value="1900" min="0" step="50" inputmode="numeric"></div></div>
           </div>
           <div class="tool-row"><label for="p-hoa">HOA dues per month</label>
             <div class="inp"><span>$</span><input id="p-hoa" type="number" value="0" min="0" step="10" inputmode="numeric"></div></div>
-          <p class="tool-note">Mortgage insurance is added automatically at 0.5% per year when the down payment is under 20%. Estimates only. Your lender's number is the one that counts.</p>
+          <p class="tool-note">Property tax: enter the combined Onslow County and town rate from the <a href="https://www.onslowcountync.gov/DocumentCenter/View/6905/2025-TAX-RATES" target="_blank" rel="noopener">county's official tax rate sheet</a>. Mortgage insurance is added automatically at 0.5% per year when the down payment is under 20%. Estimates only. Your lender's number is the one that counts.</p>
         </div>
         <div class="tool-output">
           <div class="out-total"><small>Estimated monthly payment</small><b id="p-total">$0</b></div>
@@ -240,7 +240,7 @@ before launch, then set value and remove this comment. -->
   </div>
 </section>
 </main>
-<div class="sticky-cta"><a href='/sell#value'>What is my home worth?</a></div>
+<aside class="sticky-cta" aria-label="Quick action"><a href='/sell#value'>What is my home worth?</a></aside>
 <footer class="footer">
   <div class="wrap">
     <div class="footer-top">
@@ -252,17 +252,17 @@ before launch, then set value and remove this comment. -->
           </div>
       </div>
       <div>
-        <h4>Explore</h4>
+        <p class="foot-h">Explore</p>
         <a href='/buy'>Buy</a><br><a href='/sell'>Sell</a><br><a href='/rent'>Rent</a><br>
         <a href='/agents'>About Josh</a><br><a href='/portfolio'>Portfolio</a><br><a href='/cash-offer'>Get a Cash Offer</a><br><a href='/areas'>Areas We Serve</a><br><a href='/services'>Services</a><br>
         <a href='/tools'>Tools</a><br><a href='/blog'>Blog</a>
       </div>
       <div>
-        <h4>Areas</h4>
+        <p class="foot-h">Areas</p>
         <a href='/areas'>Jacksonville</a><br><a href='/areas'>Sneads Ferry</a><br><a href='/areas'>Surf City</a><br><a href='/areas'>Hubert</a><br><a href='/areas'>Richlands</a><br><a href='/areas'>Swansboro</a><br><a href='/areas'>Holly Ridge</a><br><a href='/areas'>Hampstead</a>
       </div>
       <div>
-        <h4>Get In Touch</h4>
+        <p class="foot-h">Get In Touch</p>
         <p class="small" style="line-height:1.9">
           <a href="tel:+19103335433">(910) 333-5433</a><br>
           <a href="mailto:homessoldbyjosh@gmail.com">homessoldbyjosh@gmail.com</a><br>
@@ -270,10 +270,10 @@ before launch, then set value and remove this comment. -->
         <a class='btn btn-sm' href='/contact' style='margin-top:12px'>Start a Conversation</a>
       </div>
     </div>
-    <p class="disclaimer broker-mark"><img src="assets/img/rog-one-mark.png" alt="Realty ONE Group" width="44" height="44" loading="lazy"><span>Josh Eudy, Broker, NC Real Estate License #300792. Realty ONE Group Revolution. Each office is independently owned and operated. Equal Housing Opportunity.</span></p>
+    <p class="disclaimer broker-mark"><img src="assets/img/rog-one-mark.png" alt="Realty ONE Group" width="44" height="44" loading="lazy"><span>Josh Eudy, Broker, NC Real Estate License #300792. Realty ONE Group Revolution, 915 Vernon Dr, Jacksonville, NC. Each office is independently owned and operated. Equal Housing Opportunity.</span></p>
     <div class="footer-bottom">
-      <span>&copy; 2026 Josh Eudy, Realtor. Website by <a href="https://www.oakandalgorithm.com">Oak &amp; Algorithm</a>.</span>
-      <span><a href="#">Privacy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a> &nbsp;&middot;&nbsp; <a href="#">Accessibility</a> &nbsp;&middot;&nbsp; <a href="#">Fair Housing</a></span>
+      <span class="u-links">&copy; 2026 Josh Eudy, Realtor. Website by <a href="https://www.oakandalgorithm.com">Oak &amp; Algorithm</a>.</span>
+      <span><a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a> &nbsp;&middot;&nbsp; <a href="/accessibility">Accessibility</a> &nbsp;&middot;&nbsp; <a href="/fair-housing">Fair Housing</a></span>
     </div>
   </div>
 </footer>
@@ -281,6 +281,8 @@ before launch, then set value and remove this comment. -->
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
+  "@id": "https://josheudy.com/#agent",
+  "sameAs": ["https://www.instagram.com/realtor.nc/", "https://www.zillow.com/profile/JoshEudy"],
   "name": "Josh Eudy",
   "alternateName": "Joshua Eudy",
   "jobTitle": "Broker",
@@ -299,13 +301,11 @@ before launch, then set value and remove this comment. -->
   },
   "worksFor": {
     "@type": "RealEstateOrganization",
-    "name": "ONE LUX at Realty ONE Group Revolution"
+    "name": "Realty ONE Group Revolution"
   },
   "hasCredential": [
     {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "North Carolina Real Estate Broker License", "identifier": "300792"},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Military Relocation Professional (MRP)"},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Seniors Real Estate Specialist (SRES)"},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Luxury Homes Certification"}
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Military Relocation Professional (MRP)"}
   ],
   "knowsAbout": [
     "Camp Lejeune relocation",
@@ -337,8 +337,8 @@ before launch, then set value and remove this comment. -->
 }
 </script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How fast is the Jacksonville market actually moving right now?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your price band, which is why the countywide number is close to useless on its own. Onslow County closed 424 homes in August at a median of $313,745, with an average of 52 days on market and 3.59 months of supply. Here is the part nobody mentions: the median rose 1.54 percent while the average sale price fell 5.01 percent. The top of the market is softening faster than the middle. If you are listing above $400,000 that matters far more to you than the headline does."}}, {"@type": "Question", "name": "Do I need to be pre approved before we start looking?", "acceptedAnswer": {"@type": "Answer", "text": "You need it before you write an offer, not before you look. Go see houses first. If you fall in love with something in week one and you are not pre approved, you lose it. So get the paperwork moving early, but do not let it stall the tour."}}, {"@type": "Question", "name": "What do you charge?", "acceptedAnswer": {"@type": "Answer", "text": "Buyers sign a representation agreement that spells out the fee and how it gets paid, before we tour anything. Sellers get a listing proposal with the number, what it covers, and what it does not. No surprises, in writing, on day one."}}, {"@type": "Question", "name": "We are PCSing and cannot fly out. Can this work remotely?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it is a large share of what I do. Video tours, neighborhood drives, gate-by-gate commute mapping, flood zone and insurance checks before you commit, and a local inspector who tells you the truth. If you are coming in on orders, send me your report date and I will work backward from it."}}]}</script>
-<script src="assets/js/site.js?v=20261007" defer></script>
-<script src="assets/js/tools.js?v=20261007" defer></script>
+
+<script src="assets/js/site.js?v=20261007c" defer></script>
+<script src="assets/js/tools.js?v=20261007c" defer></script>
 </body>
 </html>

@@ -25,10 +25,34 @@
   var closeBtn = document.querySelector('.drawer .x');
   function toggleDrawer(open) {
     if (!drawer) return;
+    var was = drawer.classList.contains('open');
     drawer.classList.toggle('open', open);
     document.body.style.overflow = open ? 'hidden' : '';
     if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open && closeBtn) setTimeout(function () { closeBtn.focus(); }, 60);
+    if (!open && was && burger) burger.focus();
   }
+  if (drawer) drawer.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab' || !drawer.classList.contains('open')) return;
+    var f = drawer.querySelectorAll('a[href], button');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  if (drawer) drawer.addEventListener('click', function (e) { if (e.target.closest('nav a')) toggleDrawer(false); });
+
+  /* ---------- Hero video pause control (WCAG 2.2.2) ---------- */
+  var vt = document.querySelector('.vid-toggle');
+  var hv = document.querySelector('.hero-media video');
+  if (vt && hv) {
+    var setVt = function (paused) {
+      vt.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      vt.textContent = paused ? 'Play background video' : 'Pause background video';
+    };
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { hv.pause(); hv.removeAttribute('autoplay'); setVt(true); }
+    vt.addEventListener('click', function () { if (hv.paused) { hv.play(); setVt(false); } else { hv.pause(); setVt(true); } });
+  } else if (vt) { vt.hidden = true; }
   if (burger) burger.addEventListener('click', function () { toggleDrawer(!drawer.classList.contains('open')); });
   if (closeBtn) closeBtn.addEventListener('click', function () { toggleDrawer(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggleDrawer(false); });
@@ -211,6 +235,9 @@
           '<div class="form-done"><h3>That did not go through.</h3>' +
           '<p>Sorry about that. Call or text me at <a href="tel:+19103335433" style="color:var(--red)">(910) 333-5433</a> ' +
           'or email <a href="mailto:homessoldbyjosh@gmail.com" style="color:var(--red)">homessoldbyjosh@gmail.com</a> and I will take it from there.</p></div>';
+        form.setAttribute('role', 'status');
+        var h3 = form.querySelector('h3');
+        if (h3) { h3.setAttribute('tabindex', '-1'); h3.focus(); }
       }
     });
   });
