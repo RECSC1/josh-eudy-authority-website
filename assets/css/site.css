@@ -792,3 +792,19 @@ table.data tr:hover td{background:#FCFBFA}
 .brand-logo img{width:auto!important;max-width:none;flex:none}
 .nav .brand-logo img{height:62px}
 @media(max-width:640px){.nav .brand-logo img{height:46px}}
+/* Blog (Oct 2026) */
+.answer-box{background:var(--shell);border-left:3px solid var(--red-light);padding:20px 24px;margin:1.6rem 0 2rem}
+.answer-box b{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+.answer-box p{margin:0;font-size:1.02rem!important;color:var(--ink)!important}
+.article .sources{margin-top:1.6rem;font-size:.85rem}
+.article .sources b{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.article .sources li{font-size:.85rem;margin-bottom:.3rem}
+.article a:not(.btn):not(.link-more){border-bottom-color:rgba(140,107,34,.35)}
+table.cmp{width:100%;border-collapse:collapse;font-size:.95rem;margin:0 0 1.4rem}
+table.cmp th,table.cmp td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+table.cmp thead th{background:var(--black);color:#fff;font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+table.cmp tbody td:first-child{font-weight:600;color:var(--black)}
+.author-box{display:flex;gap:18px;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-top:2.4rem}
+.author-box img{width:88px;height:88px;border-radius:50%;object-fit:cover;flex:none}
+.author-box b{display:block;color:var(--black);font-size:1.05rem}
+.author-box span{display:block;font-size:.9rem;line-height:1.6;color:var(--body);margin:.3rem 0 .6rem}
