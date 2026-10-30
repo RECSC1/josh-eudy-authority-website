@@ -854,3 +854,13 @@ table.cmp tbody td:first-child{font-weight:600;color:var(--black)}
 .trust-strip img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:0 0 auto}
 .trust-strip span{display:block;margin-top:4px;font-size:.8rem;color:#5E5B57}
 @media(min-width:641px){.vid-toggle{left:auto;right:calc(var(--gut) + 96px);bottom:20px}}
+
+/* Portfolio hidden until Josh's photos land. The page has 11 empty slots.
+   To bring it back: delete this block, re-add the sitemap entry, and remove
+   the noindex tag from portfolio.html. Nothing else needs to change. */
+.nav-links li:has(> a[href="/portfolio"]),
+.drawer nav a[href="/portfolio"],
+.footer a[href="/portfolio"],
+a.svc[href="/portfolio"],
+a.btn[href="/portfolio"],
+.nav-links a[href="/portfolio"]{display:none!important}
