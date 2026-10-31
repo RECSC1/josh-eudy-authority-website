@@ -825,7 +825,7 @@ table.cmp tbody td:first-child{font-weight:600;color:var(--black)}
 /* Hero contrast: bottom-weighted only. The headline sits at the bottom of the hero,
    so the middle and upper frame are left clear and the video can actually be seen.
    A light top pass keeps the white nav legible. */
-.hero .scrim{background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.06) 28%,rgba(0,0,0,.10) 48%,rgba(0,0,0,.55) 78%,rgba(0,0,0,.82) 100%)}
+.hero .scrim{background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.08) 20%,rgba(0,0,0,.28) 45%,rgba(0,0,0,.60) 68%,rgba(0,0,0,.84) 100%)}
 .banner .scrim{background:linear-gradient(90deg,rgba(10,10,10,.72) 0%,rgba(10,10,10,.4) 55%,rgba(10,10,10,.15) 100%),linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.7) 100%)}
 .banner h1,.banner p{text-shadow:0 1px 18px rgba(0,0,0,.35)}
 .hero h1,.hero p{text-shadow:0 2px 10px rgba(0,0,0,.55),0 1px 32px rgba(0,0,0,.40)}
@@ -902,5 +902,50 @@ a.btn[href="/portfolio"],
    ============================================================== */
 .hero-media video{display:none}
 .hero-media .hero-fallback{display:none}
-.hero-media{background:url("/assets/img/hero-sunset.jpg?v=20261101") 50% 45% / cover no-repeat}
+.hero-media{background:url("/assets/img/hero-sunset.jpg?v=20261101b") 50% 45% / cover no-repeat}
 .vid-toggle{display:none}
+
+
+/* ==============================================================
+   HERO EYEBROW TO THE TOP  (added 2026-10-31)
+   Pins "Jacksonville · Onslow County · Sneads Ferry · Topsail"
+   just under the logo instead of above the headline, and holds
+   it on one line.
+   TO MOVE IT UP OR DOWN: change the 110px below. Bigger number
+   pushes it further down the page. Nothing else needs touching.
+   ============================================================== */
+.hero .hero-in > p.eyebrow:first-child{
+  position:absolute;
+  top:calc(var(--nav-h) + 110px);
+  left:var(--gut);
+  right:var(--gut);
+  margin:0;
+  white-space:nowrap;
+  opacity:1;
+  text-shadow:0 2px 12px rgba(0,0,0,.65),0 1px 28px rgba(0,0,0,.45)
+}
+
+/* Phones: let it wrap and sit higher, or it runs off the screen. */
+@media(max-width:860px){
+  .hero .hero-in > p.eyebrow:first-child{
+    position:static;
+    white-space:normal;
+    margin:0 0 1.1rem
+  }
+}
+
+
+/* ==============================================================
+   LIFT THE HERO TEXT  (added 2026-10-31)
+   Pushes the headline, search bar and buttons up off the bottom
+   edge so they sit on the dark marsh grass instead of hugging
+   the base of the screen.
+   TO TUNE: change 16vh below. Bigger number lifts the text
+   higher. Do not go much past 20vh or the headline climbs onto
+   the lit water and white type stops reading.
+   ============================================================== */
+.hero .hero-in{padding-bottom:clamp(48px,16vh,210px)}
+
+@media(max-width:860px){
+  .hero .hero-in{padding-bottom:clamp(40px,8vh,110px)}
+}
