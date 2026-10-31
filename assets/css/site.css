@@ -953,3 +953,29 @@ a.btn[href="/portfolio"],
 /* Services cards jump to their own detail block further down the page.
    The nav is fixed at 78px, so without this the heading lands underneath it. */
 .steps .step[id]{scroll-margin-top:calc(var(--nav-h) + 28px)}
+
+
+/* ==============================================================
+   JUMP TARGET HIGHLIGHT  (added 2026-11-01)
+   Service and town cards send people to a block further down the
+   same page. Those blocks are short, so several fit on screen at
+   once and every jump looked identical. This marks the one you
+   actually landed on, with a brief flash that settles into a
+   quiet gold rule.
+   ============================================================== */
+.steps .step:target,
+[id^="town-"]:target{
+  background:var(--red-soft);
+  border-left:3px solid var(--red-light);
+  padding:18px 20px 18px 22px;
+  border-radius:3px;
+  animation:jump-flash 1.8s ease-out 1
+}
+@keyframes jump-flash{
+  0%   {background:#EFE2C2}
+  18%  {background:#EFE2C2}
+  100% {background:var(--red-soft)}
+}
+@media(prefers-reduced-motion:reduce){
+  .steps .step:target,[id^="town-"]:target{animation:none}
+}
