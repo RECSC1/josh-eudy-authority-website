@@ -889,3 +889,17 @@ a.btn[href="/portfolio"],
    than re-encoding the mp4. If it ever looks washed out, bring
    brightness back toward 1.0. */
 .hero-media video{filter:brightness(1.12) saturate(1.06) contrast(1.02)}
+
+
+/* ==============================================================
+   HERO: STATIC IMAGE INSTEAD OF VIDEO  (added 2026-10-31)
+   hero.mp4 is underexposed brown footage. Once the curtain came
+   off the scrim there was nothing worth looking at behind it.
+   This swaps in a real local sunset until Josh's media day
+   footage arrives.
+   TO GO BACK TO VIDEO: delete this entire block. Nothing else
+   needs to change, the <video> tag is untouched.
+   ============================================================== */
+.hero-media video{display:none}
+.hero-media{background:url("/assets/img/hero-sunset.jpg?v=20261031") 50% 45% / cover no-repeat}
+.vid-toggle{display:none}
