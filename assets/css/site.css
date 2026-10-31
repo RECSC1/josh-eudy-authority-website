@@ -979,3 +979,20 @@ a.btn[href="/portfolio"],
 @media(prefers-reduced-motion:reduce){
   .steps .step:target,[id^="town-"]:target{animation:none}
 }
+
+
+/* ==============================================================
+   ONE AT A TIME  (added 2026-11-01)
+   Service and town cards jump to a block inside a long stacked
+   list, so every click landed on a page that looked identical.
+   With nothing selected the whole list shows, which is what
+   crawlers and AI engines read. The moment a card is clicked,
+   only the block you asked for stays on screen.
+   The "Show all" link above the list clears the selection.
+   ============================================================== */
+.steps:has(.step:target) .step{display:none}
+.steps:has(.step:target) .step:target{display:block}
+.jump-reset{display:none}
+.steps:has(.step:target) ~ .jump-reset,
+.wrap:has(.steps .step:target) .jump-reset{display:block}
+.jump-reset a{color:var(--red);text-decoration:underline;font-weight:600}
