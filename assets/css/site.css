@@ -949,3 +949,7 @@ a.btn[href="/portfolio"],
 @media(max-width:860px){
   .hero .hero-in{padding-bottom:clamp(40px,8vh,110px)}
 }
+
+/* Services cards jump to their own detail block further down the page.
+   The nav is fixed at 78px, so without this the heading lands underneath it. */
+.steps .step[id]{scroll-margin-top:calc(var(--nav-h) + 28px)}
