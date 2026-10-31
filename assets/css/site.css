@@ -901,5 +901,6 @@ a.btn[href="/portfolio"],
    needs to change, the <video> tag is untouched.
    ============================================================== */
 .hero-media video{display:none}
+.hero-media .hero-fallback{display:none}
 .hero-media{background:url("/assets/img/hero-sunset.jpg?v=20261031") 50% 45% / cover no-repeat}
 .vid-toggle{display:none}
