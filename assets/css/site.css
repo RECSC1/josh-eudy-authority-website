@@ -822,10 +822,13 @@ table.cmp tbody td:first-child{font-weight:600;color:var(--black)}
 .nav-call svg{width:18px;height:18px;fill:currentColor}
 .nav.over-hero .nav-call{color:#fff;border-color:rgba(255,255,255,.5)}
 @media(max-width:1100px){.nav-call{display:inline-flex}}
-/* Hero contrast: darker left side behind the headline */
-.hero .scrim{background:linear-gradient(90deg,rgba(10,10,10,.78) 0%,rgba(10,10,10,.5) 45%,rgba(10,10,10,.18) 100%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.1) 35%,rgba(0,0,0,.65) 100%)}
+/* Hero contrast: bottom-weighted only. The headline sits at the bottom of the hero,
+   so the middle and upper frame are left clear and the video can actually be seen.
+   A light top pass keeps the white nav legible. */
+.hero .scrim{background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.06) 28%,rgba(0,0,0,.10) 48%,rgba(0,0,0,.55) 78%,rgba(0,0,0,.82) 100%)}
 .banner .scrim{background:linear-gradient(90deg,rgba(10,10,10,.72) 0%,rgba(10,10,10,.4) 55%,rgba(10,10,10,.15) 100%),linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.7) 100%)}
-.hero h1,.hero p,.banner h1,.banner p{text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.banner h1,.banner p{text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.hero h1,.hero p{text-shadow:0 2px 10px rgba(0,0,0,.55),0 1px 32px rgba(0,0,0,.40)}
 /* Pause control for hero video */
 .vid-toggle{position:absolute;left:var(--gut);bottom:22px;z-index:3;background:rgba(10,10,10,.55);color:#fff;border:1px solid rgba(255,255,255,.4);
   border-radius:999px;padding:10px 16px;min-height:44px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
@@ -864,3 +867,25 @@ table.cmp tbody td:first-child{font-weight:600;color:var(--black)}
 a.svc[href="/portfolio"],
 a.btn[href="/portfolio"],
 .nav-links a[href="/portfolio"]{display:none!important}
+
+
+/* ==============================================================
+   HERO BRIGHTNESS  (added 2026-10-31)
+   The homepage hero video was sitting behind two stacked black
+   gradients that multiplied to roughly 88 percent opacity on the
+   left side. Replaced above with a bottom-weighted scrim.
+   These two rules finish the job. Keep them LAST in the file:
+   the mobile override needs to come after the base .hero .scrim
+   rule to win on source order.
+   ============================================================== */
+
+/* Phone portrait: the headline wraps to more lines, so the dark
+   band has to start higher up the frame. */
+@media(max-width:900px){
+  .hero .scrim{background:linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,.12) 24%,rgba(0,0,0,.26) 45%,rgba(0,0,0,.66) 72%,rgba(0,0,0,.86) 100%)}
+}
+
+/* The hero footage itself runs dark. Lift it in the browser rather
+   than re-encoding the mp4. If it ever looks washed out, bring
+   brightness back toward 1.0. */
+.hero-media video{filter:brightness(1.12) saturate(1.06) contrast(1.02)}
