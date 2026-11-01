@@ -1030,3 +1030,68 @@ a.btn[href="/portfolio"],
 }
 .pad.dark .qa-q{color:var(--red-light)}
 .pad.dark .answer-by{color:rgba(255,255,255,.6);border-top-color:rgba(255,255,255,.14)}
+
+
+/* ==============================================================
+   MAP: COLOUR PASS  (added 2026-11-01)
+   The map was grey lines on grey. This gives it eastern NC
+   colour: warm farmland inland, sage toward the marsh, real
+   water, and gold pins on brand. All CSS, the SVG is untouched,
+   so it applies to every map on the site at once.
+   ============================================================== */
+
+/* Land. The flat rect inside the SVG is switched off and the
+   panel behind it carries a gradient instead: warm inland sand
+   at the top left, sage toward the coast. */
+.map-svg>rect{fill:none}
+.map-panel{
+  background:
+    radial-gradient(120% 90% at 8% 4%,  #F7F3E8 0%, rgba(247,243,232,0) 62%),
+    radial-gradient(110% 100% at 96% 96%, #E4EFEA 0%, rgba(228,239,234,0) 58%),
+    linear-gradient(142deg, #F3EFE3 0%, #EDF1E3 44%, #E6EDE6 74%, #DDE9E9 100%);
+  border-color:#E0DAD0
+}
+
+/* Water. Three bodies in the drawing: the sound and ocean to the
+   south east, the New River, then the channel. Each gets its own
+   depth, with a shoreline stroke so the edges read. */
+.map-svg .water{
+  fill:#A8CBD6;
+  stroke:#7FB0BE;
+  stroke-width:1.1;
+  stroke-linejoin:round
+}
+.map-svg .water:nth-child(2){fill:#8FBDCC}
+.map-svg .water:nth-child(3){fill:#A3C8D4}
+.map-svg .water:nth-child(4){fill:#B4D4DC}
+
+/* Roads. Warm tan instead of grey, with the highways heavier. */
+.map-svg .road{stroke:#D9CDB8;stroke-width:2.4}
+.map-svg .road.major{stroke:#C2AE8C;stroke-width:4}
+
+/* Highway labels */
+.map-svg text{fill:#9A8F7C}
+
+/* Pins. Brand gold for the core markets, warm stone for the rest,
+   each with a soft halo so they sit above the colour. */
+.map-svg .map-pin circle.dot{
+  fill:var(--red);
+  stroke:#FFFDF8;
+  stroke-width:2;
+  filter:drop-shadow(0 1px 2px rgba(60,45,15,.35))
+}
+.map-svg .map-pin.tier-secondary circle.dot{fill:#9C8E78;stroke-width:1.6}
+.map-svg .map-pin circle.halo{fill:var(--red-light)}
+.map-svg .map-pin text{
+  fill:#4A443B;
+  paint-order:stroke;
+  stroke:rgba(255,253,248,.85);
+  stroke-width:3px;
+  stroke-linejoin:round
+}
+.map-svg .map-pin.tier-secondary text{fill:#6E6558}
+.map-svg .map-pin:hover text,.map-svg .map-pin.active text{fill:var(--red-dark)}
+
+@media(prefers-reduced-motion:reduce){
+  .map-svg .map-pin circle.dot{filter:none}
+}
