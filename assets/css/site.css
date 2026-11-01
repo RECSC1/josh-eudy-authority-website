@@ -1095,3 +1095,28 @@ a.btn[href="/portfolio"],
 @media(prefers-reduced-motion:reduce){
   .map-svg .map-pin circle.dot{filter:none}
 }
+
+
+/* ==============================================================
+   MAPBOX SERVICE AREA MAP  (added 2026-11-01)
+   Replaces the hand drawn SVG. Real geography, brand pins.
+   ============================================================== */
+.area-map{width:100%;height:clamp(380px,52vh,620px);background:#F4EFE1}
+.map-panel .area-map{display:block}
+.map-wide .area-map{height:clamp(420px,58vh,680px)}
+.mb-pin{position:relative;display:block;background:none;border:0;padding:0;cursor:pointer;line-height:0}
+.mb-pin i{display:block;width:15px;height:15px;border-radius:50%;background:var(--red);
+  border:2.5px solid #fff;box-shadow:0 1px 5px rgba(40,30,8,.45);transition:transform .18s}
+.mb-pin.tier-secondary i{width:10px;height:10px;background:#8E8370;border-width:2px}
+.mb-pin span{position:absolute;left:22px;top:50%;transform:translateY(-50%);white-space:nowrap;
+  font-family:var(--font-sans);font-size:13.5px;font-weight:650;color:#2B2822;line-height:1.2;
+  text-shadow:0 0 4px #fff,0 0 4px #fff,0 0 4px #fff,0 0 4px #fff}
+.mb-pin.tier-secondary span{left:17px;font-size:12px;font-weight:500;color:#57514A}
+.mb-pin:hover i,.mb-pin:focus-visible i,.mb-pin.active i{transform:scale(1.25);background:var(--red-dark)}
+.mb-pin:hover span,.mb-pin:focus-visible span,.mb-pin.active span{color:var(--red-dark)}
+.mb-pin:focus-visible{outline:2px solid var(--red);outline-offset:6px;border-radius:50%}
+.mapboxgl-ctrl-logo,.mapboxgl-ctrl-attrib{opacity:.8}
+@media(max-width:760px){
+  .mb-pin.tier-secondary span{display:none}
+  .area-map{height:clamp(320px,46vh,460px)}
+}
